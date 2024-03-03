@@ -16,7 +16,7 @@ function Weather(props) {
             humidity: response.data.main.humidity,
             date: new Date(response.data.dt * 1000),
             description: response.data.weather[0].description,
-            /*iconUrl: "#";*/
+            iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
             wind: response.data.wind.speed,
             city: response.data.name
         });
@@ -31,7 +31,6 @@ function Weather(props) {
     function handleSubmit(event){
         event.preventDefault();
         search(city);
-
     }
 
     function handleCityChange(event){
